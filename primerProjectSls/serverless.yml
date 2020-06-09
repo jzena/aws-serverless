@@ -1,0 +1,16 @@
+service: primerProjectSls
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-west-2
+  profile: jzena
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
